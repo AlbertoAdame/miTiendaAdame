@@ -46,7 +46,7 @@
 	int id_articulo = Integer.parseInt(request.getParameter("id_articulo"));
 	
 
-	int numeroProducto=c.cantidadProductos(id_articulo);
+	int numeroProducto=c.cantidadProductos(c.getItem(id_articulo));
 	
 	
 	//We need product and category at this point

@@ -125,7 +125,7 @@
 	
 	            <div class="infoProducto">
 	                <a class="titulitos"><%= p.getNombre() %> <%= p.getPrecio() %> €</a>   <br>
-	                <small> Cant: <%= c.cantidadProductos(i.getId_articulo()) %> </small>
+	                <small> Cant: <%= c.cantidadProductos(c.getItem(i.getId_articulo())) %> </small>
 	            </div>
 	            <div id="introducir">
 	                <a href="borrarItem.jsp?id=<%=i.getId_articulo()%>">

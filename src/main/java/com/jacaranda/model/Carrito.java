@@ -88,23 +88,23 @@ public class Carrito {
 	public float precioTotal() {
 		float resultado = 0;
 		for(ItemCarrito i : carrito) {
-			resultado += (i.getPrecio()*this.cantidadProductos(i.getId_articulo()));
+			resultado += (i.getPrecio()*this.cantidadProductos(getItem(i.getId_articulo())));
 		}
 		return resultado;
 	}
 	
 	/**
-	 * We need this method to control product's stock
+	 * We need this method to control product's stock (before shop the products)
 	 * 
 	 * @param id
 	 * @return The amount of products there is in one item specific
 	 */
-	public int cantidadProductos(int id) {//Preguntar si este método está bien, o se debería hacer de otra forma
+	public int cantidadProductos(ItemCarrito i) {
 		int resultado = 0;
 		try {
-			ItemCarrito i = new ItemCarrito(id, 0, 0, null);
 			int posicion = carrito.indexOf(i);
-			resultado=carrito.get(posicion).getCantidad();
+			if(posicion!=-1)
+				resultado=carrito.get(posicion).getCantidad();
 		
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

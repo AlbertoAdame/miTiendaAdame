@@ -65,9 +65,10 @@ public class RegisterExec extends HttpServlet {
 			error = true;
 		} else if (!error) {
 			for (int i = 0; i < usuarioCadena.length(); i++) {
-				if (usuarioCadena.charAt(i) == ' ')
+				if (usuarioCadena.charAt(i) == ' ') {	
 					noValido = 2;// usuario tiene espacios
 					error = true;
+				}
 			}
 			
 			Users u = CRUDUsers.readUser(usuarioCadena);

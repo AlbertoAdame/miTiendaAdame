@@ -27,7 +27,7 @@ public class CRUDVenta {
 	public static List<Venta> loadList(){
 		Session session = ConnectionBD.getSession();
 		List<Venta> list = new ArrayList<>();
-		Query query = session.createQuery("SELECT v FROM VENTA v");
+		Query query = session.createQuery("SELECT v FROM VENTA v ORDER BY FECHA_VENTA DESC");
 		list = query.getResultList();
 		return list;
 		

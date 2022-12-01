@@ -163,7 +163,7 @@ public class Main extends HttpServlet {
 			for (Producto p : listaProducto) {
 				Categoria c = CRUDCategoria.readCategoria(p.getId_categoria());
 				
-				int	validStock = ca.cantidadProductos(p.getId());
+				int	validStock = ca.cantidadProductos(ca.getItem(p.getId()));
 				
 				if((p.getStock()  - validStock)>0) {
 				

@@ -47,7 +47,7 @@
 	if(c != null){
 		for(ItemCarrito i : lista){
 			Producto p = CRUDProducto.readProducto(i.getId_articulo());
-			Venta v = new Venta(u, p, LocalDateTime.now(), i.getCantidad(), (i.getCantidad()*i.getPrecio()));
+			Venta v = new Venta(u, p, LocalDateTime.now(), i.getCantidad(), (i.getPrecio()));
 			CRUDVenta.addVenta(v);
 			p.setStock(p.getStock()-i.getCantidad());
 			
